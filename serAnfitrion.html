@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>RentEase</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css"
+    />
+
+    <!-- Google Rubik -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img src="img/rentease_logo.png" alt="RentEase Logo">
+        </a>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="alquilar.html" class="active">Propiedades</a></li>
+        <li><a href="serAnfitrion.html" class="active">Ser Anfitrion</a></li>
+      </ul>
+      <div class="navbar-user">
+        <a href="cuenta.html">
+          <img src="img/user_icon.png" alt="User Icon">
+        </a>
+      </div>
+      <button class="navbar-toggle" onclick="toggleMenu()">&#9776;</button>
+    </nav>
+
+    <!-- Navbar End -->
+
+    <body>
+      <div class="caja-4">
+        <div class="location-div">
+          <input type="text" class="location-input" placeholder="Ingrese ubicación...">
+          <div class="image-upload">
+            <button id="upload-button" class="upload-button">Subir imagen</button>
+            <input id="image-upload-input" type="file" accept="image/*" style="display: none;">
+            <img id="uploaded-image" src="#" alt="Imagen seleccionada" style="max-width: 100%; max-height: 100%; display: none;">
+          </div>
+          <div class="form-section">
+            <div class="form-text">Ingrese un titulo llamativo:</div>
+            <input type="text" class="location-input" placeholder="Ingrese un titulo llamativo...">
+          </div>
+          <div class="form-section">
+            <div class="form-text">¿Acepta mascotas?</div>
+            <div class="form-options">
+              <button type="button" class="option-button" data-value="si">Si</button>
+              <button type="button" class="option-button" data-value="no">No</button>
+            </div>
+          </div>
+          <div class="form-section">
+            <div class="form-text">Ingresar cantidad máxima:</div>
+            <input id="max-quantity-input" type="text" class="form-max-quantity" placeholder="Ingrese cantidad máxima...">
+          </div>
+          <div class="form-section">
+            <div class="form-text">Días hábiles para cancelación:</div>
+            <input type="text" class="form-max-quantity" placeholder="Ingrese días hábiles para cancelación...">
+          </div>
+        </div>
+        <div class="host-section">
+          <div class="form-section">
+            <div class="form-text">Anfitrión:</div>
+            <input type="text" class="host-input" placeholder="Nombre del anfitrión...">
+            <input type="text" class="additional-info" style="height: 150px;" placeholder="Ingrese información adicional...">
+          </div>
+        </div>
+        <div>
+          <div class="price-section">
+            <div class="form-section">
+              <div class="form-text2">Ingrese precio:</div>
+              <div class="form-price">
+                <div class="price-symbol">S/.</div>
+                <input type="text" class="location-input" placeholder="Ingrese precio...">
+              </div>
+            </div>
+            <div class="form-section">
+              <div class="form-text2">Descuentos por estadia semanal:</div>
+              <div class="form-price">
+                <div class="price-symbol">S/.</div>
+                <input type="text" class="location-input" placeholder="Ingrese descuento...">
+              </div>
+            </div>
+            <div class="form-section">
+              <div class="form-text2">Tarifa de limpieza:</div>
+              <div class="form-price">
+                <div class="price-symbol">S/.</div>
+                <input type="text" class="location-input" placeholder="Ingrese tarifa de limpieza...">
+              </div>
+            </div>
+            <div class="form-section">
+              <div class="form-text2">Tarifa por servicio de RentEase:</div>
+              <div>7%</div>
+            </div>
+          </div>
+          <div class="info-section">
+            <div class="info-title">Lo que debes saber:</div>
+            <div class="info-text">
+              <p>El check-in es a partir de las 12:00 PM<br>
+                La salida es antes de las 10:00 PM<br>
+                Prohibidas fiestas y reuniones
+             </p>       
+            </div>
+            <button class="show-more-button">Mostrar más <span class="show-more-icon">&#8250;</span></button>
+          </div>
+
+          <div class="button-container">
+            <button id="guardar-button" class="upload-button">Guardar</button> 
+            <div id="guardado-message" style="display: none;">
+              Guardado <span>&#10004;</span>
+            </div>
+          </div>
+          
+          <div id="guardado-modal" class="modal">
+            <div class="modal-content">
+              <div class="guardado-message-modal">Guardado <span>&#10004;</span></div>
+              <button id="aceptar-button" class="upload-button">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const fileInput = document.getElementById('image-upload-input');
+          const uploadedImage = document.getElementById('uploaded-image');
+          const uploadButton = document.getElementById('upload-button');
+          const optionButtons = document.querySelectorAll('.option-button');
+          const maxQuantityInput = document.getElementById('max-quantity-input');
+          const maxQuantitySection = document.querySelector('.form-max-quantity-section');
+          const showMoreButton = document.querySelector('.show-more-button');
+          const guardarButton = document.getElementById('guardar-button');
+      
+          uploadButton.addEventListener('click', function() {
+            fileInput.value = '';
+            fileInput.click();
+          });
+      
+          fileInput.addEventListener('change', function() {
+            const selectedFile = fileInput.files[0];
+            if (selectedFile) {
+              const reader = new FileReader();
+      
+              reader.onload = function(event) {
+                uploadedImage.src = event.target.result;
+                uploadedImage.style.display = 'block';
+                uploadButton.style.display = 'none';
+              };
+      
+              reader.readAsDataURL(selectedFile);
+            }
+          });
+      
+          uploadedImage.addEventListener('click', function() {
+            fileInput.value = '';
+            fileInput.click();
+          });
+      
+          showMoreButton.addEventListener('click', function() {
+            guardarButton.style.display = 'block';
+          });
+      
+          optionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+              optionButtons.forEach(btn => {
+                btn.classList.remove('selected');
+              });
+              this.classList.add('selected');
+      
+              if (this.dataset.value === 'no') {
+                maxQuantityInput.value = '';
+                maxQuantitySection.style.display = 'none';
+              } else {
+                maxQuantitySection.style.display = 'block';
+              }
+            });
+          });
+      
+          const aceptarButton = document.getElementById('aceptar-button');
+      
+          aceptarButton.addEventListener('click', function() {
+            const guardadoModal = document.getElementById('guardado-modal');
+            guardadoModal.style.display = 'none';
+          });
+      
+          guardarButton.addEventListener('click', function() {
+            const guardadoModal = document.getElementById('guardado-modal');
+            guardadoModal.style.display = 'block';
+          });
+        });
+      </script>
+
+        
+
+    </body>
+
+
+    <!-- Footer Start -->
+    <div
+      class="footer container-fluid position-relative bg-dark py-5"
+      style="margin-top: 90px"
+    >
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-6 pr-lg-5 mb-5">
+            <a href="index.html" class="navbar-brand">
+              <h1 class="mb-3 text-white">
+                <span class="text-primary">Rent</span> Ease
+              </h1>
+            </a>
+            <p>
+              Encarnamos estos principios al simplificar el proceso de alquiler
+              de propiedades, ofreciendo una experiencia fluida y conveniente
+              para propietarios y arrendatarios por igual.
+            </p>
+            <p><i class="fa fa-map-marker-alt mr-2"></i>Av.Pumacahua 1541</p>
+            <p><i class="fa fa-phone-alt mr-2"></i>+51 998 332 803</p>
+            <p><i class="fa fa-envelope mr-2"></i>jaraujod1@upao.edu.pe</p>
+            <div class="d-flex justify-content-start mt-4">
+              <a
+                class="btn btn-lg btn-primary btn-lg-square mr-2"
+                href="Twitter.com/RentEase"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-lg btn-primary btn-lg-square mr-2"
+                href="Twitter.com/RentEase"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+
+              <a
+                class="btn btn-lg btn-primary btn-lg-square"
+                href="Twitter.com/RentEase"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-6 pl-lg-5">
+            <div class="row">
+              <div class="col-sm-6 mb-5">
+                <h5 class="text-white text-uppercase mb-4">ASISTENCIA</h5>
+                <div class="d-flex flex-column justify-content-start">
+                  <a class="text-white-50 mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Centro de ayuda</a
+                  >
+
+                  <a class="text-white-50 mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Opciones de
+                    cancelación</a
+                  >
+                  <a class="text-white-50 mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Problemas en el
+                    Vecindario</a
+                  >
+                </div>
+              </div>
+              <div class="col-sm-6 mb-5">
+                <h5 class="text-white text-uppercase mb-4">ANFITRIÓN</h5>
+                <div class="d-flex flex-column justify-content-start">
+                  <a class="text-white-50 mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Pon tu espacio en
+                    RentEase</a
+                  >
+                  <a class="text-white-50 mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Anfitriones con
+                    responsabilidad</a
+                  >
+                  <a class="text-white-50 mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Recursos para ser
+                    Anfitrión</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid bg-dark text-light border-top py-4"
+      style="border-color: rgba(256, 256, 256, 0.15) !important"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white">
+              &copy; <a href="index.html">RentEase</a>. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-right">
+            <p class="m-0 text-white">
+              Designed by <a href="twitter.com/Chiqoval">Ascentt</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"
+      ><i class="fa fa-angle-double-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
